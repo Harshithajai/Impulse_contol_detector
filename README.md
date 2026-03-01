@@ -13,11 +13,11 @@ Dataset:** E-commerce customer data with behavioral metrics
  🎯 Key Features
 
  Engineered Features:
-- session_speed**: Average time per click (seconds/click)
-- urgency_score**: Quick add-to-cart action (< 2 minutes)
-- discount_sensitivity**: Response to discount offers
-- night_purchase_flag**: Purchases between 10 PM and 5 AM
-- mobile_user_flag**: Mobile device usage indicator
+- session_speed: Average time per click (seconds/click)
+- urgency_score: Quick add-to-cart action (< 2 minutes)
+- discount_sensitivity: Response to discount offers
+- night_purchase_flag: Purchases between 10 PM and 5 AM
+- mobile_user_flag: Mobile device usage indicator
 
  Target Variable Calculation:
 
@@ -29,7 +29,7 @@ Impulse Control Index (ICI) = 0.3*normalized_session_speed
 Impulse_Purchase = 1 if ICI > 0.6 else 0
 
 
-## 📁 Project Structure
+📁 Project Structure
 
 
 22MIA1088/
