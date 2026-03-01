@@ -30,7 +30,7 @@ Impulse_Purchase = 1 if ICI > 0.6 else 0
 
 
 📁 Project Structure
-
+```
 22MIA1088/
 │
 ├── Impulse_Control_Predictor.ipynb
@@ -74,7 +74,7 @@ Impulse_Purchase = 1 if ICI > 0.6 else 0
 └── README.md
     └── Project Documentation
 
-
+```
  🚀 Quick Start
 
  Option 1: Google Colab (Recommended)
