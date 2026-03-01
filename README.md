@@ -31,23 +31,48 @@ Impulse_Purchase = 1 if ICI > 0.6 else 0
 
 📁 Project Structure
 
-
 22MIA1088/
-├── Impulse_Control_Predictor.ipynb    # Main Jupyter Notebook
-├── streamlit_dashboard.py             # Interactive Streamlit dashboard
+│
+├── Impulse_Control_Predictor.ipynb
+│   └── Main Jupyter Notebook (End-to-End ML Pipeline)
+│
+├── streamlit_dashboard.py
+│   └── Interactive Streamlit Dashboard for Predictions & Visualization
+│
 ├── data/
 │   └── ecommerce_customer_churn_dataset.csv
+│       └── Raw E-commerce Dataset
+│
 ├── models/
-│   ├── xgb_impulse_model.pkl          # Trained XGBoost model
-│   ├── scaler.pkl                      # MinMaxScaler for features
-│   ├── feature_columns.pkl             # List of features used
-│   └── model_metadata.json             # Model information
-├── data_processing.py                  # Data loading and preprocessing
-├── feature_engineering.py              # Feature creation
-├── train_model.py                      # Model training and visualization
-├── evaluation.py                       # Model evaluation metrics
-├── explainability.py                   # SHAP-based explanations
-└── README.md                           # This file
+│   ├── xgb_impulse_model.pkl
+│   │   └── Trained XGBoost Model
+│   │
+│   ├── scaler.pkl
+│   │   └── MinMaxScaler for Feature Scaling
+│   │
+│   ├── feature_columns.pkl
+│   │   └── List of Model Feature Columns
+│   │
+│   └── model_metadata.json
+│       └── Model Performance & Configuration Details
+│
+├── data_processing.py
+│   └── Data Loading, Cleaning & Preprocessing
+│
+├── feature_engineering.py
+│   └── Impulse-Based Feature Creation
+│
+├── train_model.py
+│   └── Model Training & Comparison (LR, RF, XGB)
+│
+├── evaluation.py
+│   └── Performance Metrics & Visualization
+│
+├── explainability.py
+│   └── SHAP-Based Model Interpretation
+│
+└── README.md
+    └── Project Documentation
 
 
  🚀 Quick Start
