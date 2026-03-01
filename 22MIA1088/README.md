@@ -19,7 +19,7 @@ A complete Machine Learning project to predict whether a customer will make an i
 - **night_purchase_flag**: Purchases between 10 PM and 5 AM
 - **mobile_user_flag**: Mobile device usage indicator
 
-### Target Variable Calculation:
+Target Variable Calculation:
 ```
 Impulse Control Index (ICI) = 0.3*normalized_session_speed
                             + 0.3*normalized_discount
@@ -29,7 +29,7 @@ Impulse Control Index (ICI) = 0.3*normalized_session_speed
 Impulse_Purchase = 1 if ICI > 0.6 else 0
 ```
 
-## 📁 Project Structure
+📁 Project Structure
 
 ```
 22MIA1088/
@@ -120,7 +120,7 @@ ROC-AUC:   Area under the ROC curve (0.5 = random, 1.0 = perfect)
 - **Waterfall Plot:** Feature contributions to prediction
 - **Dependence Plot:** Feature interactions
 
-## 💾 Saved Artifacts
+💾 Saved Artifacts
 
 After running the notebook, the following files are generated in the `models/` directory:
 
@@ -131,42 +131,21 @@ feature_columns.pkl         # List of model features
 model_metadata.json         # Model performance metrics
 ```
 
-## 🔧 Using the Trained Model
 
-```python
-import pickle
-
-# Load the model
-with open('models/xgb_impulse_model.pkl', 'rb') as f:
-    model = pickle.load(f)
-
-# Load features
-with open('models/feature_columns.pkl', 'rb') as f:
-    features = pickle.load(f)
-
-# Make prediction on new data
-prediction = model.predict(X_new)
-probability = model.predict_proba(X_new)
-
-# Class 0: No Impulse Purchase
-# Class 1: Impulse Purchase
-```
-
-## 📊 Expected Performance
+ 📊 Expected Performance
 
 Based on typical e-commerce data:
 
-| Metric | Value |
-|--------|-------|
-| Accuracy | 75-85% |
-| Precision | 70-80% |
-| Recall | 75-85% |
-| F1 Score | 72-82% |
-| ROC-AUC | 80-90% |
+Metric  
+Accuracy : 75-85% 
+Precision :  70-80% 
+Recall : 75-85% 
+F1 Score : 72-82% 
+ROC-AUC : 80-90% 
 
-*Actual performance depends on data quality and characteristics*
+Actual performance depends on data quality and characteristics*
 
-## 🎓 Learning Outcomes
+ 🎓 Learning Outcomes
 
 This project demonstrates:
 - ✓ Complete ML pipeline development
@@ -177,16 +156,16 @@ This project demonstrates:
 - ✓ Production-ready code organization
 - ✓ Extended visualizations and analysis
 
-## 📚 Modules Overview
+ 📚 Modules Overview
 
-### data_processing.py
+ data_processing.py
 Handles data loading, exploration, and cleaning:
 - `DataProcessor.load_dataset()` - Load CSV file
 - `DataProcessor.check_missing_values()` - Missing value analysis
 - `DataProcessor.handle_missing_values()` - Smart imputation
 - `DataProcessor.display_summary_statistics()` - Data overview
 
-### feature_engineering.py
+ feature_engineering.py
 Creates impulse purchase indicators:
 - `ImpulseFeatureEngineer.create_session_speed()`
 - `ImpulseFeatureEngineer.create_urgency_score()`
@@ -195,7 +174,7 @@ Creates impulse purchase indicators:
 - `ImpulseFeatureEngineer.create_mobile_user_flag()`
 - `ImpulseFeatureEngineer.create_impulse_control_index()`
 
-### train_model.py
+ train_model.py
 Train and compare ML models:
 - `ImpulseModelTrainer.train_logistic_regression()`
 - `ImpulseModelTrainer.train_random_forest()`
@@ -203,33 +182,33 @@ Train and compare ML models:
 - `ImpulseModelTrainer.visualize_model_comparison()`
 - `ImpulseModelTrainer.visualize_xgboost_analysis()`
 
-### evaluation.py
+ evaluation.py
 Comprehensive model evaluation:
 - `ModelEvaluator.calculate_metrics()`
 - `ModelEvaluator.print_classification_report()`
 - `MetricsVisualizer.plot_confusion_matrix()`
 - `MetricsVisualizer.plot_precision_recall_curve()`
 
-### explainability.py
+ explainability.py
 SHAP-based model interpretation:
 - `ModelExplainer.initialize_shap()`
 - `ModelExplainer.plot_summary_plot()`
 - `ModelExplainer.plot_waterfall()`
 - `ModelExplainer.plot_dependence_plots()`
 
-## 🎨 Visualizations Generated
+ 🎨 Visualizations Generated
 
-1. **ICI Distribution** - Target variable distribution
-2. **Model Accuracy Comparison** - Bar chart of accuracies
-3. **ROC Curves** - Performance comparison at different thresholds
-4. **Confusion Matrices** - True/False positives/negatives
-5. **Metrics Heatmap** - All metrics for all models
-6. **Feature Importance** - Top features from XGBoost
-7. **SHAP Summary Plots** - Bar and beeswarm plots
-8. **SHAP Force Plots** - Individual prediction explanations
-9. **SHAP Dependence Plots** - Feature-target interactions
+1. ICI Distribution - Target variable distribution
+2. Model Accuracy Comparison - Bar chart of accuracies
+3. ROC Curves - Performance comparison at different thresholds
+4. Confusion Matrices - True/False positives/negatives
+5. Metrics Heatmap- All metrics for all models
+6. Feature Importance - Top features from XGBoost
+7. SHAP Summary Plots - Bar and beeswarm plots
+8. SHAP Force Plots - Individual prediction explanations
+9. SHAP Dependence Plots* - Feature-target interactions
 
-## 🔐 Production Considerations
+ 🔐 Production Considerations
 
 Before deploying:
 1. ✓ Monitor model performance on new data
@@ -240,14 +219,14 @@ Before deploying:
 6. ✓ Implement A/B testing
 7. ✓ Document assumptions and limitations
 
-## 📝 Notes
+ 📝 Notes
 
 - **Data Quality:** Model performance depends on data quality
 - **Class Balance:** Handle imbalanced classes if necessary
 - **Feature Scaling:** Features are normalized in the pipeline
 - **Reproducibility:** Random state is fixed at 42 for consistency
 
-## 🤝 Contributing
+ 🤝 Contributing
 
 To improve the model:
 1. Collect more training data
@@ -256,14 +235,14 @@ To improve the model:
 4. Try different models
 5. Implement ensemble methods
 
-## 📞 Support
+📞 Support
 
 For issues or questions:
 - Check the Jupyter notebook for detailed comments
 - Review individual module documentation
 - Examine SHAP plots for model insights
 
-## 📄 License
+ 📄 License
 
 This project is provided as-is for educational purposes.
 
@@ -272,3 +251,4 @@ This project is provided as-is for educational purposes.
 **Version:** 1.0  
 **Last Updated:** March 2026  
 **Status:** Production Ready ✓
+
