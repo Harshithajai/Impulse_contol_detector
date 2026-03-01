@@ -1,0 +1,25 @@
+{
+    "model_name": "XGBoost Impulse Purchase Predictor",
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "roc_auc": 1.0,
+    "n_features": 8,
+    "features": [
+        "session_speed",
+        "urgency_score",
+        "discount_sensitivity",
+        "night_purchase_flag",
+        "mobile_user_flag",
+        "Impulse_Control_Index",
+        "previous_purchases",
+        "customer_age"
+    ],
+    "model_type": "XGBoost",
+    "target_column": "Impulse_Purchase",
+    "classes": [
+        "No Impulse (0)",
+        "Impulse (1)"
+    ]
+}

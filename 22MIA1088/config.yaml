@@ -1,0 +1,115 @@
+# Configuration File for Impulse Control Predictor
+# Customize parameters as needed
+
+# ============================================================================
+# DATA CONFIGURATION
+# ============================================================================
+
+DATA:
+  # Path to input dataset
+  DATASET_PATH: "data/ecommerce_customer_churn_dataset.csv"
+  
+  # Test size for train-test split (0.0 to 1.0)
+  TEST_SIZE: 0.2
+  
+  # Random state for reproducibility
+  RANDOM_STATE: 42
+  
+  # Stratification for balanced split
+  STRATIFIED: true
+
+# ============================================================================
+# FEATURE ENGINEERING CONFIGURATION
+# ============================================================================
+
+FEATURES:
+  # Threshold for urgency score (minutes)
+  URGENCY_THRESHOLD: 2
+  
+  # Hours for night purchase flag
+  NIGHT_PURCHASE_START: 22
+  NIGHT_PURCHASE_END: 5
+  
+  # ICI weights (must sum to 1.0)
+  ICI_WEIGHTS:
+    SESSION_SPEED: 0.3
+    DISCOUNT_SENSITIVITY: 0.3
+    URGENCY_SCORE: 0.2
+    NIGHT_PURCHASE_FLAG: 0.2
+  
+  # ICI threshold for impulse purchase classification
+  ICI_THRESHOLD: 0.6
+
+# ============================================================================
+# MODEL CONFIGURATION
+# ============================================================================
+
+MODELS:
+  LOGISTIC_REGRESSION:
+    MAX_ITER: 1000
+    RANDOM_STATE: 42
+  
+  RANDOM_FOREST:
+    N_ESTIMATORS: 100
+    MAX_DEPTH: 10
+    RANDOM_STATE: 42
+    N_JOBS: -1
+  
+  XGBOOST:
+    N_ESTIMATORS: 100
+    MAX_DEPTH: 5
+    LEARNING_RATE: 0.1
+    RANDOM_STATE: 42
+    EVAL_METRIC: "logloss"
+    N_JOBS: -1
+
+# ============================================================================
+# OUTPUT CONFIGURATION
+# ============================================================================
+
+OUTPUT:
+  # Directory to save models
+  MODELS_DIR: "models"
+  
+  # Model filename
+  MODEL_FILENAME: "xgb_impulse_model.pkl"
+  
+  # Scaler filename
+  SCALER_FILENAME: "scaler.pkl"
+  
+  # Feature columns filename
+  FEATURES_FILENAME: "feature_columns.pkl"
+  
+  # Metadata filename
+  METADATA_FILENAME: "model_metadata.json"
+
+# ============================================================================
+# VISUALIZATION CONFIGURATION
+# ============================================================================
+
+VISUALIZATION:
+  # Figure size (width, height) in inches
+  FIGURE_SIZE: (14, 8)
+  
+  # DPI for saved figures
+  DPI: 100
+  
+  # Color scheme
+  COLOR_PALETTE: "husl"
+  
+  # Show plots immediately
+  SHOW_PLOTS: true
+
+# ============================================================================
+# LOGGING CONFIGURATION
+# ============================================================================
+
+LOGGING:
+  # Log level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  LEVEL: "INFO"
+  
+  # Log file path
+  FILE: "logs/training.log"
+  
+  # Enable console logging
+  CONSOLE: true
